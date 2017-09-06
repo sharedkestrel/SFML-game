@@ -10,7 +10,7 @@ link_directories(SFML/bin)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp config.h)
+set(SOURCE_FILES main.cpp config.h Game.cpp Game.h Window.cpp Window.h)
 set(EXECUTABLE_NAME "Game")
 add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 
