@@ -11,7 +11,7 @@
 
 class Human: public Enemy {
 private: 
-    boolean male;
+    bool male;
 };
 
 #endif //_HUMAN_H

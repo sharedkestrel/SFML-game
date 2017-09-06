@@ -16,7 +16,7 @@ public:
     
     bool unequip();
 protected: 
-    boolean stackable = false;
+    bool stackable = false;
 };
 
 #endif //_EQUIPMENT_H

@@ -6,6 +6,8 @@
 #ifndef _MAINCHARACTER_H
 #define _MAINCHARACTER_H
 
+#include <string>
+
 class MainCharacter {
 public: 
     
@@ -43,7 +45,7 @@ protected:
     Inventory * inventory;
     int maxWeight;
     int xpToLvlUp;
-    boolean busy;
+    bool busy;
     std::string spritePath;
 };
 

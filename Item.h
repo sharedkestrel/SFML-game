@@ -6,6 +6,8 @@
 #ifndef _ITEM_H
 #define _ITEM_H
 
+#include <string>
+
 class Item {
 public: 
     
@@ -21,7 +23,7 @@ protected:
     std::string description;
     bool questItem;
     int buyCost;
-    boolean stackable = true;
+    bool stackable = true;
     int stacks;
     std::string spritePath;
 };

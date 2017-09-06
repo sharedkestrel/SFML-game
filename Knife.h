@@ -13,7 +13,7 @@ class Knife: public Weapon {
 private: 
     int knives;
     int damage;
-    boolean stackable = true;
+    bool stackable = true;
 };
 
 #endif //_KNIFE_H

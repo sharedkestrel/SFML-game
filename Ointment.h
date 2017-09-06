@@ -12,7 +12,7 @@
 class Ointment: public Weapon {
 private: 
     int pots;
-    boolean stackable = true;
+    bool stackable = true;
 };
 
 #endif //_OINTMENT_H

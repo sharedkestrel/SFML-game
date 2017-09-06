@@ -6,6 +6,8 @@
 #ifndef _TILE_H
 #define _TILE_H
 
+#include <string>
+
 class Tile {
 public: 
     static int stepsFromLastEncounter;
@@ -13,7 +15,10 @@ public:
     void checkEncounters();
 private: 
     void probability;
-    boolean encounterTile;
+    bool encounterTile;
+    bool isWalkable;
+    unsigned short int environment;
+    std::string spritePath;
 };
 
 #endif //_TILE_H

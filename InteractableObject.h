@@ -6,6 +6,8 @@
 #ifndef _INTERACTABLEOBJECT_H
 #define _INTERACTABLEOBJECT_H
 
+#include <string>
+
 class InteractableObject {
 public: 
     
