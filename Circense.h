@@ -10,6 +10,11 @@
 
 
 class Circense: public MainCharacter {
+
+public:
+    Circense();
+    ~Circense();
+
 private: 
     Knife * knife;
 };

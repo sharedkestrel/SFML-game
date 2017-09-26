@@ -7,11 +7,16 @@
 #define _CRIMINALE_H
 
 #include "MainCharacter.h"
+#include "Melee.h"
 
 
 class Criminale: public MainCharacter {
-private: 
-    Melee* melee;
+public:
+    Criminale();
+
+    void Move(unsigned short int side);
+private:
+    Melee * melee = nullptr;
     int strength;
 };
 

@@ -24,7 +24,7 @@ protected:
     bool questItem;
     int buyCost;
     bool stackable = true;
-    int stacks;
+    int quantity;
     std::string spritePath;
 };
 

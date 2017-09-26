@@ -4,7 +4,7 @@
 
 #include "Window.h"
 
-Window::Window(const std::string& title, const sf::Vector2i& size){
+Window::Window(const std::string& title, const sf::Vector2u& size){
     Setup(title,size);
 }
 
@@ -12,7 +12,7 @@ Window::~Window(){
     Destroy();
 }
 
-void Window::Setup(const std::string title, const sf::Vector2i& size){
+void Window::Setup(const std::string title, const sf::Vector2u& size){
     windowTitle = title;
     windowSize = size;
     isFullscreen = false;
@@ -48,11 +48,11 @@ bool Window::IsFullscreen(){
     return isFullscreen;
 }
 
-void Window::Draw(sf::Drawable& l_drawable){
-    window.draw(l_drawable);
+void Window::Draw(sf::Drawable& drawable){
+    window.draw(drawable);
 }
 
-sf::Vector2i Window::GetWindowSize(){
+sf::Vector2u Window::GetWindowSize(){
     return windowSize;
 }
 
@@ -62,14 +62,10 @@ void Window::ToggleFullscreen(){
     Create();
 }
 
-void Window::Update(){
-    sf::Event event;
-    while(window.pollEvent(event)){
-        if(event.type == sf::Event::Closed){
-            isOpen = false;
-        }
-        else if(event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::F5){
-            ToggleFullscreen();
-        }
-    }
+sf::RenderWindow &Window::getWindow() {
+    return window;
+}
+
+void Window::setIsOpen(bool isOpen) {
+    Window::isOpen = isOpen;
 }

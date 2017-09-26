@@ -5,7 +5,9 @@
 #ifndef UNDEFINED_GAME_H
 #define UNDEFINED_GAME_H
 
+#include <fstream>
 #include "Window.h"
+#include "Criminale.h"
 
 class Game {
 
@@ -15,19 +17,32 @@ public:
     ~Game();
 
     void HandleInput();
-    void Update();
     void Render();
 
     Window* GetWindow();
 
-    sf::Time GetElapsedTime();
-    void RestartClock();
+    sf::Time GetCycleElapsedTime();
+    sf::Time GetTimestepElapsedTime();
+    void RestartCycleClock();
+    void RestartTimestepClock();
+
+    bool SaveGame(unsigned short int slot);
+    bool LoadGame(unsigned short int slot);
+
+    bool CheckFiles();
+    bool DoesFileExist(const std::string& path);
 
 private:
 
+    Criminale hero;
     Window window;
-    sf::Clock gameClock;
-    sf::Time elapsedTime;
+    sf::Clock cycleClock;
+    sf::Clock fixedTimestepClock;
+    sf::Time cycleElapsedTime;
+    sf::Time timestepElapsedTime;
+
+    //TODO tile array/vector
+
 };
 
 

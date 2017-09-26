@@ -10,7 +10,10 @@
 
 
 class Melee: public Weapon {
-private: 
+public:
+    Melee();
+
+private:
     int durability;
     int damageIncrease;
 };

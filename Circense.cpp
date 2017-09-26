@@ -8,3 +8,7 @@
 /**
  * Circense implementation
  */
+
+Circense::Circense() {
+
+}

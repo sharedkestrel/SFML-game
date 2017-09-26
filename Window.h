@@ -13,28 +13,30 @@ class Window {
 
 public:
 
-    Window(const std::string& title, const sf::Vector2i& size);
+    Window(const std::string& title, const sf::Vector2u& size);
     ~Window();
 
     void BeginDraw();
     void EndDraw();
 
-    void Update();
-
     bool IsOpen();
     bool IsFullscreen();
-    sf::Vector2i GetWindowSize();
+    sf::Vector2u GetWindowSize();
+
+    sf::RenderWindow &getWindow();
+
+    void setIsOpen(bool isOpen);
 
     void ToggleFullscreen();
 
-    void Draw(sf::Drawable& l_drawable);
+    void Draw(sf::Drawable& drawable);
 private:
-    void Setup(const std::string title, const sf::Vector2i& size);
+    void Setup(const std::string title, const sf::Vector2u& size);
     void Create();
     void Destroy();
 
     sf::RenderWindow window;
-    sf::Vector2i windowSize;
+    sf::Vector2u windowSize;
     std::string windowTitle;
 
     bool isFullscreen;

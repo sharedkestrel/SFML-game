@@ -14,7 +14,7 @@ public:
     
     void applyEffect();
 private: 
-    std::string name;
+    std::string name = "gianni";
 };
 
 #endif //_AMULET_H

@@ -8,3 +8,5 @@
 /**
  * Melee implementation
  */
+
+Melee::Melee() : durability(1), damageIncrease(1) {}
