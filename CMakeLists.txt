@@ -10,7 +10,9 @@ link_directories(SFML/bin)
 
 set(CMAKE_CXX_STANDARD 11)
 
-set(SOURCE_FILES main.cpp config.h Game.cpp Game.h Window.cpp Window.h)
+set(SOURCE_FILES main.cpp config.h Game.cpp Game.h Window.cpp Window.h MainCharacter.h MainCharacter.cpp Inventory.h
+        Inventory.cpp Item.h Item.cpp Melee.h Melee.cpp Amulet.h Amulet.cpp Armor.h Armor.cpp Criminale.cpp
+        Criminale.h)
 set(EXECUTABLE_NAME "Game")
 add_executable(${EXECUTABLE_NAME} ${SOURCE_FILES})
 
