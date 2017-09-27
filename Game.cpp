@@ -122,32 +122,20 @@ bool Game::DoesFileExist(const std::string& path) {
 
 bool Game::CheckFiles() {
 
-    //TODO compact the process/declaration/population of the vector (txt file?)
-    //create vector of all the assets
+    //create vector of all the assets, take the list of paths from a file
     std::vector<std::string> filePaths;
-    filePaths.push_back("assets\\backgrounds\\logo.png");
-    filePaths.push_back("assets\\backgrounds\\menu.png");
-    filePaths.push_back("assets\\backgrounds\\sewers.png");
-    filePaths.push_back("assets\\fonts\\menuFont.ttf");
-    filePaths.push_back("assets\\music\\battle.ogg");
-    filePaths.push_back("assets\\music\\city.ogg");
-    filePaths.push_back("assets\\music\\menu.ogg");
-    filePaths.push_back("assets\\music\\sewers.ogg");
-    filePaths.push_back("assets\\music\\swamp.ogg");
-    filePaths.push_back("assets\\saves\\save_1.txt");
-    filePaths.push_back("assets\\saves\\save_2.txt");
-    filePaths.push_back("assets\\saves\\save_3.txt");
-    filePaths.push_back("assets\\sfx\\locked.wav");
-    filePaths.push_back("assets\\sprites\\circense.png");
-    filePaths.push_back("assets\\sprites\\criminale.png");
-    filePaths.push_back("assets\\sprites\\geniere.png");
-    filePaths.push_back("assets\\sprites\\untore.png");
-    filePaths.push_back("assets\\sprites\\npc.png");
-    filePaths.push_back("assets\\map.png");
-
+    std::fstream fileList;
+    std::string line;
+    fileList.open("assets\\fileList.txt", std::fstream::in);
+    if(fileList.is_open()) {
+        while (std::getline(fileList, line)) {
+            filePaths.push_back(line);
+        }
+    }
+    else
+        return false;
 
     //TODO Check for error files to throw errors if the others aren't there
-
 
     bool filesFound = true;
     for(const std::string& file : filePaths){
